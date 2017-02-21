@@ -1,36 +1,37 @@
-<?php 
+<?php
 namespace Modules\Divabox\Controller\Index;
-//use magento\framework\App\Action\Action;
 
 class Save extends \Magento\Framework\App\Action\Action
 {
-	public function execute()
+
+    public function execute()
 	{
-		// récupére les données du formulaire  
-		$name = $this->getRequest()->getPost('name');
-		$media = $this->getrequest()->getPost('media');
 
-		// verifie si les formulaires sont remplis
-		if (empty($name) || empty($media)) 
+        // Récupération des données du formulaire
+
+        $name = $this->getRequest()->getPost('name');
+        $media = $this->getRequest()->getPost('media');
+
+        if(empty($name) || empty($media)) // verifier si les champs sont remplis
 		{
-			$this->messageManager->addError('tous les champs sont obligatoires');
-			$this->_redirect('*/*/index');
-		}
-		else 
+            $this->messageManager->addError('Tous les champs sont obligatoires !');
+            $this->_redirect('*/*/index');
+        }
+		else
 		{
-			//sauvegarde des  données dans la table media
-			$media = $this->_objectManager->create('Modules\Divabox\Model\Medias');
-			$media->setName($name);
-			$media->setMedia($media);
-			$media->save();
+        	// sauvegarde des données
+            $medias = $this->_objectManager->create('Modules\Divabox\Model\Medias');
+            $medias->setName($name);
+            $medias->setMedia($media);
+			$medias->save();
 
-			//message de validation & redirection
-			$this->messageManager->addSuccess('Votre media est bien ajouté !');
-			$this->_redirect('*/*/index');
+            // redirection sur l'index
+            $this->messageManager->addSuccess('Media ajouté !');
+            $this->_redirect('*/*/index');
 
-		} //fin de la condition
+        } //fin de la condition
 
-	}//fin de la fonction
+    }// fin de la fonction
 
-}//fin de la class
+} // fin de la class
 ?>
