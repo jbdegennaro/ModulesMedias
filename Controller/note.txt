@@ -1,0 +1,1 @@
+controller: contient les controleurs de l'extension, point d'entrée de toutes requêtes.

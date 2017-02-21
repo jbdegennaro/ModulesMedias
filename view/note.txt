@@ -1,0 +1,1 @@
+view: éléments d'affichage (XML, templates, CSS, Js)

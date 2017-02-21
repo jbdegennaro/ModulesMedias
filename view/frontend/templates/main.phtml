@@ -1,0 +1,20 @@
+<h2>Liste des medias</h2>
+
+<p>
+	<?php $medias = $block->afficher(); ?>
+	<?php foreach ($medias as $item) :?>
+		<?php echo $item['name'] ?> <?php echo $item['media'] ?>
+		<br>
+	<?php endforeach; ?>
+</p>
+
+<form action="<?php echo $block->getSaveUrl(); ?>" method="post">
+	<label for="name"> Nom:</label>
+	<input type="text" name="name" id="name">
+	<br><br>
+
+	<label for="media">URL Media: </label>
+	<input type="text" name="media" id="media">
+	<br><br>
+	<input type="submit" value="Add in BDD">
+</form>

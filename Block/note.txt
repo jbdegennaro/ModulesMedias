@@ -1,0 +1,1 @@
+Block: contient les différents blocs du module interagissant avec les templates.
