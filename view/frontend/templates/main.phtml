@@ -1,12 +1,23 @@
 <h2>Liste des medias</h2>
 
-<p>
+<table border="1px">
+	<tr>
+		<th>ID Media</th>
+		<th>Nom</th>
+		<th>URL</th>
+	</tr>
+
 	<?php $medias = $block->afficher(); ?>
 	<?php foreach ($medias as $item) :?>
-		<?php echo $item['name'] ?> <?php echo $item['media'] ?>
-		<br>
+	<tr>
+		<td><?php echo $item['id']; ?></td>
+		<td><?php echo $item['name']; ?></td>
+		<td><?php echo $item['media']; ?></td>
+	</tr>
 	<?php endforeach; ?>
-</p>
+</table>
+<br>
+
 
 <form action="<?php echo $block->getSaveUrl(); ?>" method="post">
 	<label for="name"> Nom:</label>

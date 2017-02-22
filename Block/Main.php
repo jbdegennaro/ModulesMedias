@@ -10,8 +10,8 @@ class Main extends Template
 	{
 		$objectManager = \magento\framework\App\ObjectManager::getInstance();
 
-		$collection = $objectManager->create('Modules\Divabox\Model\Resource\Medias\Collection');
-
+		$collection = $objectManager
+		->create('Modules\Divabox\Model\Resource\Medias\Collection');
 		return $collection->load()->getData();
 	}
 
