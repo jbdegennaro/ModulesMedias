@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		 <add id="Modules_Divabox::main_menu" title="Divabox"
+                 module="Modules_Divabox" sortOrder="20"
+                 resource="Modules_Divabox::divabox" />
+            <add id="Modules_Divabox::index" title="Medias"
+                 module="Modules_Divabox" sortOrder="1" parent="Modules_Divabox::main_menu"
+                 action="divabox/index" resource="Modules_Divabox::Index" />
+    </menu>
+</config>
