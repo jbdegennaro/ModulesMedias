@@ -3,14 +3,13 @@ namespace Modules\Divabox\Controller\Index;
 
 class Save extends \Magento\Framework\App\Action\Action
 {
-
     public function execute()
 	{
-
         // Récupération des données du formulaire
 
         $name = $this->getRequest()->getPost('name');
         $media = $this->getRequest()->getPost('media');
+        //$files = $this-getRequest()->getPost('fichier'); récupération fichier à voir plus tard
 
         if(empty($name) || empty($media)) // verifier si les champs sont remplis
 		{

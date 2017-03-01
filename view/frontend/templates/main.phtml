@@ -1,5 +1,6 @@
 <h2>Liste des medias</h2>
 
+<!---  Affichage des données de la table Modules-media dans un tableau **********-->
 <table border="1px">
 	<tr>
 		<th>ID Media</th>
@@ -18,14 +19,23 @@
 </table>
 <br>
 
-
-<form action="<?php echo $block->getSaveUrl(); ?>" method="post">
+<!-- Formulaire d'ajout media dans la base de données Modules media ************ -->
+<form action="<?php echo $block->getSaveUrl(); ?>" method="post" enctype="multipart/form-data">
 	<label for="name"> Nom:</label>
 	<input type="text" name="name" id="name">
 	<br><br>
 
-	<label for="media">URL Media: </label>
+	<label for="media"> URL:</label>
 	<input type="text" name="media" id="media">
 	<br><br>
-	<input type="submit" value="Add in BDD">
+	<input type="submit" value="Add in BDD"> 
+	<br><br>
+
+	<fieldset>
+		<h3>en cours de contruction !</h3>
+		<label for="media">Importer media </label>
+		<input type="hidden" name="MAX-FILE-SIZE" value="3145728">
+		<input type="file" name="fichier" id="fichier"><br>
+		<label for="ajoutermedia"> fichier (tous formats | 3Mo MAX !)</label>
+	</fieldset>
 </form>
